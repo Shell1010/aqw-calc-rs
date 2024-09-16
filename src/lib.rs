@@ -1,5 +1,10 @@
-mod types;
-use types::{Calculator, Character, Enemy, Function, Skill};
+mod calc;
+
+use calc::{
+    skills::{Function, Skill},
+    entities::{Character, Enemy},
+    calc::Calculator
+};
 
 fn main() {
     let me = Character::new(
