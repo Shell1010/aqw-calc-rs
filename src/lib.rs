@@ -1,5 +1,6 @@
 mod types;
 use types::{Calculator, Character, Enemy, Function, Skill};
+
 fn main() {
     let me = Character::new(
         1.2, 1.1,
