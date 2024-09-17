@@ -1,16 +1,24 @@
-
+/*
+DoTs require additional all out multiplier
+Implement when I'm not lazy
+*/
 
 #[derive(Debug, Clone)]
 pub struct Skill {
     pub name: String,
     pub coef: f32,
     pub function: Function,
+    pub is_dot: bool,
     pub is_heal: bool
 }
 
 impl Skill {
-    pub fn new(name: &str, coef: f32, function: Function) -> Skill {
-        Self { name: name.to_string() , coef, function, is_heal: coef.is_sign_negative() }
+    pub fn new(name: &str, coef: f32, is_dot: bool, function: Function) -> Skill {
+        Self { 
+            name: name.to_string(),
+            coef, function, is_dot,
+            is_heal: coef.is_sign_negative()
+        }
     }
 
     pub fn calculate(&self, wdps: f32) -> f32 {

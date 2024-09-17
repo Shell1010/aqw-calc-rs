@@ -5,17 +5,19 @@ pub struct Character {
     all_out: f32,
     phy_out: f32,
     mag_out: f32,
+    dot_out: f32,
     heal_out: f32,
     weapon_boost: f32,
 }
 
 
 impl Character {
-    pub fn new(all_out: f32, phy_out: f32, mag_out: f32, heal_out: f32, weapon_boost: f32) -> Self {
+    pub fn new(all_out: f32, phy_out: f32, mag_out: f32, dot_out: f32, heal_out: f32, weapon_boost: f32) -> Self {
         Self {
             all_out,
             phy_out,
             mag_out,
+            dot_out,
             heal_out,
             weapon_boost
         }
@@ -35,6 +37,10 @@ impl Character {
 
     pub fn heal_out(&self) -> f32 {
         self.heal_out
+    }
+
+    pub fn dot_out(&self) -> f32 {
+        self.dot_out
     }
 
     pub fn weapon_boost(&self) -> f32 {
@@ -61,6 +67,11 @@ impl Character {
         self.heal_out
     }
 
+    pub fn change_dot_out(&mut self, n: f32) -> f32 {
+        self.dot_out += n;
+        self.dot_out
+    }
+
     pub fn change_weapon_boost(&mut self, n: f32) -> f32 {
         self.weapon_boost += n;
         self.weapon_boost
@@ -73,11 +84,12 @@ pub struct Enemy {
     all_in: f32,
     phy_in: f32,
     mag_in: f32,
+    dot_in: f32
 }
 
 impl Enemy {
-    pub fn new(all_in: f32, phy_in: f32, mag_in: f32) -> Self {
-        Self { all_in, phy_in, mag_in }
+    pub fn new(all_in: f32, phy_in: f32, mag_in: f32, dot_in: f32) -> Self {
+        Self { all_in, phy_in, mag_in, dot_in }
     }
 
     pub fn all_in(&self) -> f32 {
@@ -90,6 +102,10 @@ impl Enemy {
 
     pub fn mag_in(&self) -> f32 {
         self.mag_in
+    }
+
+    pub fn dot_in(&self) -> f32 {
+        self.dot_in
     }
 
     pub fn change_all_in(&mut self, n: f32) -> f32 {
@@ -105,5 +121,10 @@ impl Enemy {
     pub fn change_mag_in(&mut self, n: f32) -> f32 {
         self.mag_in += n;
         self.mag_in
+    }
+
+    pub fn change_dot_in(&mut self, n: f32) -> f32 {
+        self.dot_in += n;
+        self.dot_in
     }
 }
