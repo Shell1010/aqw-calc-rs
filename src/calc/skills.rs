@@ -1,6 +1,6 @@
 
 
-
+#[derive(Debug, Clone)]
 pub struct Skill {
     pub name: String,
     pub coef: f32,
@@ -18,13 +18,14 @@ impl Skill {
     }
 }
 
-
+#[derive(Debug, Clone)]
 pub enum FuncType {
     Physical,
     Magical,
     Hybrid
 }
 
+#[derive(Debug, Clone)]
 pub enum Function {
     AP1 { ap: f32,  },
     SP1 { sp: f32,  },
