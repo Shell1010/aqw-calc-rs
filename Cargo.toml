@@ -7,5 +7,5 @@ edition = "2021"
 
 
 [lib]
-name = "Aqw_Calc"
+name = "aqw_calc"
 path = "src/lib.rs"
